@@ -3,10 +3,11 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
     android:background="@drawable/bg_survey_gradient"
+    android:fitsSystemWindows="true"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <!-- ✅ Toolbar -->
+    <!-- Toolbar -->
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/toolbarHelp"
         android:layout_width="match_parent"
@@ -44,7 +45,7 @@
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="📋 Frequently Asked Questions"
+                        android:text="Frequently Asked Questions"
                         android:textSize="16sp"
                         android:textStyle="bold"
                         android:textColor="@color/black"
@@ -54,7 +55,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="10dp"
-                        android:text="• How to use the safety survey?\n→ Go to 'Survey' tab and answer all safety-related questions.\n\n• How to save my reports?\n→ After completing, tap on 'Submit'. The report saves automatically in your account.\n\n• How to contact emergency services?\n→ Use the 'Emergency' section to call or alert authorities instantly."
+                        android:text="- How to use the safety survey?\n> Go to 'Survey' tab and answer all safety-related questions.\n\n- How to save my reports?\n> After completing, tap on 'Submit'. The report saves automatically in your account.\n\n- How to contact emergency services?\n> Use the 'Emergency' section to call or alert authorities instantly."
                         android:textSize="14sp"
                         android:textColor="#555555"
                         android:fontFamily="@font/poppins_regular" />
@@ -66,7 +67,7 @@
                 android:id="@+id/btnContact"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="📧 Contact Support"
+                android:text="Contact Support"
                 android:textAllCaps="false"
                 android:textColor="@android:color/white"
                 android:backgroundTint="@color/teal_700"
@@ -78,7 +79,7 @@
                 android:id="@+id/btnFeedback"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="⭐ Give Feedback"
+                android:text="Give Feedback"
                 android:textAllCaps="false"
                 android:textColor="@android:color/white"
                 android:backgroundTint="@color/teal_700"

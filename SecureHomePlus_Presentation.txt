@@ -1,0 +1,67 @@
+================================================================================
+SecureHome+ | Your All-in-One Digital Home Guardian
+Presentation Script & Content
+================================================================================
+
+[SLIDE 1: INTRODUCTION & VISION]
+Hook: "Home should be the safest place on earth. But how do we ensure it stays that way in an increasingly complex world?"
+
+The Vision: "SecureHome+ is not just another utility app; it is a personalized safety ecosystem. We've combined proactive risk assessment, real-time environmental monitoring, and swift emergency response into one intuitive platform."
+
+--------------------------------------------------------------------------------
+
+[SLIDE 2: THE PROBLEM]
+Context: "Traditional home security is often expensive or fragmented. People have cameras but no plan, fire alarms but no quick access to help, and they often overlook common household hazards."
+
+Our Solution: "SecureHome+ bridges this gap by providing professional-grade safety tools directly in your pocket, free of charge and easy to use."
+
+--------------------------------------------------------------------------------
+
+[SLIDE 3: CORE FEATURE - SAFETY EVALUATION]
+Feature: The Smart Home Survey
+Content: "The journey starts with our 'Safety Evaluation' tool. Users answer a series of expertly curated questions about their home's infrastructure—covering fire safety, entry points, and smart monitoring. 
+
+Output: "The app analyzes these answers and generates a Safety Score, providing tailored recommendations on what to fix today to prevent a crisis tomorrow."
+
+--------------------------------------------------------------------------------
+
+[SLIDE 4: DYNAMIC ENVIRONMENT - WEATHER FORECAST]
+Feature: Enhanced Weather Monitoring
+Content: "Safety is also about knowing what's coming outside. Our app delivers real-time weather forecasts with high-precision data on temperature, humidity, wind speed, and visibility. 
+
+Visuals: "The modern, glass-morphism dashboard ensures that weather data is not just informative, but visually striking, keeping the user updated at a glance."
+
+--------------------------------------------------------------------------------
+
+[SLIDE 5: EMERGENCY RESPONSE - FAMILY & ALERTS]
+Feature: SMS & Location Alert System
+Content: "In a real emergency, every second counts. Users can add family members as emergency contacts. With one tap of the 'Emergency Alert' button, the app automatically:
+1. Grabs your real-time GPS location.
+2. Composes an emergency message.
+3. Sends it immediately via SMS and in-app notifications."
+
+Value: "It’s a lifelace for seniors, children, or anyone in a moment of distress."
+
+--------------------------------------------------------------------------------
+
+[SLIDE 6: RESOURCE HUB - SECURITY SHOP & HELPLINES]
+Feature: Education & E-Commerce
+Security Shop: "We don't just tell you there's a problem; we help you solve it. Our integrated Security Shop suggests the top appliances (like smart locks and sensors) that users can browse in-app."
+
+National Helplines: "We've built a comprehensive directory of Indian National Emergency numbers. From Police (100) and Fire (101) to Women's Safety (1091) and the Elder Line (14567), help is literally one click away."
+
+--------------------------------------------------------------------------------
+
+[SLIDE 7: TECHNOLOGY & DESIGN]
+Architecture: "The app is built on a robust Kotlin/Android foundation."
+- Security: "Firebase Authentication handles user identity securely."
+- Performance: "Room Database provides lightning-fast local storage for safety reports."
+- Aesthetics: "A premium, modern UI using Material 3 and custom gradients to make the experience feel premium."
+
+--------------------------------------------------------------------------------
+
+[SLIDE 8: CONCLUSION & CALL TO ACTION]
+Summary: "SecureHome+ is about more than just data; it's about life. It’s about ensuring that Nandini's home, your home, and my home are protected by technology that cares."
+
+Closing: "Join us in making safety a standard, not a luxury. Thank you!"
+================================================================================

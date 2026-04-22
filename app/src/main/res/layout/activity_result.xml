@@ -6,6 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/bg_survey_gradient"
+    android:fitsSystemWindows="true"
     tools:context=".ui.result.ResultActivity">
 
     <!-- Toolbar -->
@@ -128,7 +129,7 @@
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:text="💾 Save Report"
+                    android:text="Save Report"
                     android:textAllCaps="false"
                     android:textColor="@android:color/white"
                     android:backgroundTint="@color/teal_700"
@@ -142,7 +143,7 @@
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:layout_marginStart="8dp"
-                    android:text="📍 View Map"
+                    android:text="View Map"
                     android:textAllCaps="false"
                     android:textColor="@android:color/white"
                     android:backgroundTint="@color/teal_700"
@@ -156,7 +157,7 @@
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:layout_marginStart="8dp"
-                    android:text="📤 Share"
+                    android:text="Share"
                     android:textAllCaps="false"
                     android:textColor="@android:color/white"
                     android:backgroundTint="@color/teal_700"
@@ -169,7 +170,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="© 2025 SecureHome+ | Crafted by Kavish 💚"
+                android:text="(c) 2025 SecureHome+ | Crafted by Nandini"
                 android:textColor="@android:color/white"
                 android:textSize="12sp"
                 android:fontFamily="@font/poppins_light"

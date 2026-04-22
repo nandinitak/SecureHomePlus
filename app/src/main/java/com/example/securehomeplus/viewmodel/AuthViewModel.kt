@@ -18,13 +18,16 @@ class AuthViewModel(private val repository: UserRepository) : ViewModel() {
     private val _registerResult = MutableLiveData<Boolean>()
     val registerResult: LiveData<Boolean> get() = _registerResult
 
+    private val _errorMessage = MutableLiveData<String?>()
+    val errorMessage: LiveData<String?> get() = _errorMessage
+
     fun registerUser(name: String, email: String, password: String) {
         viewModelScope.launch(Dispatchers.IO) {
-            val alreadyExists = repository.isUserRegistered(email)
-            if (!alreadyExists) {
-                repository.registerUser(User(name = name, email = email, password = password))
+            val result = repository.registerUser(User(name = name, email = email, password = password))
+            result.onSuccess {
                 _registerResult.postValue(true)
-            } else {
+            }.onFailure { error ->
+                _errorMessage.postValue(error.message)
                 _registerResult.postValue(false)
             }
         }
@@ -32,10 +35,24 @@ class AuthViewModel(private val repository: UserRepository) : ViewModel() {
 
     fun loginUser(email: String, password: String) {
         viewModelScope.launch(Dispatchers.IO) {
-            val user = repository.loginUser(email, password)
+            val result = repository.loginUser(email, password)
             withContext(Dispatchers.Main) {
-                _loginResult.value = user
+                result.onSuccess { user ->
+                    _loginResult.value = user
+                }.onFailure { error ->
+                    _errorMessage.value = null // Reset first
+                    _errorMessage.value = error.message
+                    _loginResult.value = null
+                }
             }
         }
+    }
+
+    fun clearError() {
+        _errorMessage.value = null
+    }
+
+    fun logout() {
+        repository.logout()
     }
 }

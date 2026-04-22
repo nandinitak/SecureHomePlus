@@ -65,24 +65,6 @@ class LoginActivity : AppCompatActivity() {
         val factory = AuthViewModelFactory(repo)
 
         viewModel = ViewModelProvider(this, factory)[AuthViewModel::class.java]
-
-        viewModel.loginResult.observe(this) { user ->
-            if (user != null) {
-
-                prefs.saveLogin(user.email)
-
-                //  If user enabled biometric → bind this email
-                if (prefs.isBiometricEnabled()) {
-                    prefs.saveBiometricUser(user.email)
-                }
-
-                Toast.makeText(this, "Welcome ${user.name}", Toast.LENGTH_SHORT).show()
-                goToDashboard()
-
-            } else {
-                Toast.makeText(this, "Invalid credentials!", Toast.LENGTH_SHORT).show()
-            }
-        }
     }
 
     private fun goToDashboard() {
@@ -104,7 +86,35 @@ class LoginActivity : AppCompatActivity() {
                 password.isEmpty() ->
                     binding.etPassword.error = "Enter password"
 
-                else -> viewModel.loginUser(email, password)
+                else -> {
+                    binding.progressBar.visibility = android.view.View.VISIBLE
+                    binding.btnLogin.isEnabled = false
+                    viewModel.loginUser(email, password)
+                }
+            }
+        }
+
+        viewModel.loginResult.observe(this) { user ->
+            binding.progressBar.visibility = android.view.View.GONE
+            binding.btnLogin.isEnabled = true
+            
+            if (user != null) {
+                prefs.saveLogin(user.email)
+                prefs.saveUserName(user.name)
+                if (prefs.isBiometricEnabled()) {
+                    prefs.saveBiometricUser(user.email)
+                }
+                Toast.makeText(this, "Welcome ${user.name}", Toast.LENGTH_SHORT).show()
+                goToDashboard()
+            }
+        }
+
+        viewModel.errorMessage.observe(this) { error ->
+            if (error != null) {
+                binding.progressBar.visibility = android.view.View.GONE
+                binding.btnLogin.isEnabled = true
+                Toast.makeText(this, "Error: $error", Toast.LENGTH_LONG).show()
+                viewModel.clearError()
             }
         }
     }
@@ -190,7 +200,6 @@ class LoginActivity : AppCompatActivity() {
             }
         )
 
-        //  FINAL FIX → NO NEGATIVE BUTTON (mandatory)
         promptInfo = BiometricPrompt.PromptInfo.Builder()
             .setTitle("Secure Login")
             .setSubtitle("Use fingerprint to continue")

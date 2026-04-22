@@ -52,6 +52,16 @@ class SettingsActivity : AppCompatActivity() {
                     true
                 }
 
+            //  Privacy Policy
+            findPreference<androidx.preference.Preference>("privacy_policy")
+                ?.setOnPreferenceClickListener {
+                    val intent = android.content.Intent(requireContext(), com.example.securehomeplus.ui.webview.WebViewActivity::class.java)
+                    intent.putExtra("EXTRA_TITLE", "Privacy Policy")
+                    intent.putExtra("EXTRA_URL", "file:///android_asset/privacy_policy.html")
+                    startActivity(intent)
+                    true
+                }
+
             //  Clear History
             findPreference<androidx.preference.Preference>("clear_history")
                 ?.setOnPreferenceClickListener {

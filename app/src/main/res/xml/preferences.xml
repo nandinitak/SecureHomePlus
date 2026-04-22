@@ -20,6 +20,10 @@
 
     <PreferenceCategory app:title="Data &amp; Privacy">
         <Preference
+            app:key="privacy_policy"
+            app:title="Privacy Policy"
+            app:summary="Read our commitment to your data security" />
+        <Preference
             app:key="clear_history"
             app:title="Clear Survey History"
             app:summary="Delete all saved survey reports from local storage" />

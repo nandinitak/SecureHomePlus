@@ -41,7 +41,7 @@
         android:id="@+id/tvQuote"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Stay Secure, Stay Smart — Your Safety, Our Priority 🔒"
+        android:text="Stay Secure, Stay Smart - Your Safety, Our Priority"
         android:textSize="12sp"
         android:fontFamily="@font/poppins_medium"
         android:textColor="#E0E0E0"

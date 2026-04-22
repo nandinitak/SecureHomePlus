@@ -2,6 +2,7 @@
 <LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:orientation="vertical"
     android:gravity="center_horizontal"
     android:background="@drawable/bg_auth_gradient"
@@ -17,113 +18,340 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical">
+            android:orientation="vertical"
+            android:layout_gravity="center">
 
-            <ImageView
-                android:layout_width="110dp"
-                android:layout_height="110dp"
-                android:src="@drawable/img"
-                android:layout_marginTop="25dp"
-                android:layout_gravity="center"
-                android:layout_marginBottom="25dp" />
+            <!-- App Logo with Animation -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:gravity="center"
+                android:layout_marginTop="30dp"
+                android:layout_marginBottom="30dp">
+
+                <ImageView
+                    android:layout_width="110dp"
+                    android:layout_height="110dp"
+                    android:src="@drawable/img"
+                    android:layout_gravity="center"
+                    android:contentDescription="App Logo"
+                    android:elevation="8dp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Create Account"
+                    android:textColor="@color/teal_700"
+                    android:textSize="28sp"
+                    android:textStyle="bold"
+                    android:layout_marginTop="10dp"
+                    android:fontFamily="sans-serif-medium"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Join SecureHome+ today"
+                    android:textColor="@color/gray"
+                    android:textSize="14sp"
+                    android:layout_marginTop="5dp"/>
+            </LinearLayout>
+
+            <!-- Progress Indicator -->
+            <com.google.android.material.progressindicator.LinearProgressIndicator
+                android:id="@+id/progressBar"
+                android:layout_width="match_parent"
+                android:layout_height="4dp"
+                android:indeterminate="true"
+                android:visibility="gone"
+                app:trackColor="@color/light_gray"
+                app:indicatorColor="@color/teal_700"
+                android:layout_marginBottom="20dp"/>
 
             <!-- Full Name -->
             <com.google.android.material.textfield.TextInputLayout
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="Full Name"
-                app:startIconDrawable="@drawable/ic_person">
+                app:startIconDrawable="@drawable/ic_person"
+                app:startIconTint="@color/teal_700"
+                app:boxStrokeColor="@color/teal_700"
+                app:endIconMode="clear_text"
+                app:errorEnabled="true"
+                android:layout_marginBottom="16dp">
 
                 <com.google.android.material.textfield.TextInputEditText
-                    android:layout_width="match_parent"                android:layout_height="wrap_content"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
                     android:id="@+id/etName"
-                    android:padding="15dp"
-                    android:paddingStart="40dp"
+                    android:padding="16dp"
+                    android:paddingStart="48dp"
                     android:textColor="?attr/colorOnSurface"
-                    android:textColorHint="?attr/colorOnSurface"
-                    android:background="@null"/>
+                    android:textColorHint="@color/gray"
+                    android:background="@null"
+                    android:maxLines="1"/>
             </com.google.android.material.textfield.TextInputLayout>
 
             <!-- Email -->
             <com.google.android.material.textfield.TextInputLayout
-                android:layout_marginTop="15dp"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="Email"
-                app:startIconDrawable="@drawable/ic_email">
+                android:hint="Email Address"
+                app:startIconDrawable="@drawable/ic_email"
+                app:startIconTint="@color/teal_700"
+                app:boxStrokeColor="@color/teal_700"
+                app:endIconMode="clear_text"
+                app:errorEnabled="true"
+                android:layout_marginBottom="16dp">
 
                 <com.google.android.material.textfield.TextInputEditText
-                    android:layout_width="match_parent"                android:layout_height="wrap_content"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
                     android:id="@+id/etEmail"
-                    android:padding="15dp"
-                    android:paddingStart="40dp"
-                    android:inputType="textEmailAddress"/>
+                    android:padding="16dp"
+                    android:paddingStart="48dp"
+                    android:inputType="textEmailAddress"
+                    android:textColor="?attr/colorOnSurface"
+                    android:textColorHint="@color/gray"
+                    android:background="@null"
+                    android:maxLines="1"/>
             </com.google.android.material.textfield.TextInputLayout>
+
+            <!-- Mobile Number -->
+            <com.google.android.material.textfield.TextInputLayout
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Mobile Number"
+                app:startIconDrawable="@drawable/ic_phone"
+                app:startIconTint="@color/teal_700"
+                app:boxStrokeColor="@color/teal_700"
+                app:errorEnabled="true"
+                android:layout_marginBottom="16dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="+91"
+                        android:textColor="@color/teal_700"
+                        android:textStyle="bold"
+                        android:padding="8dp"
+                        android:layout_marginStart="4dp"/>
+
+                    <View
+                        android:layout_width="1dp"
+                        android:layout_height="20dp"
+                        android:background="@color/light_gray"
+                        android:layout_marginHorizontal="8dp"/>
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:id="@+id/etPhone"
+                        android:padding="16dp"
+                        android:inputType="phone"
+                        android:maxLength="10"
+                        android:textColor="?attr/colorOnSurface"
+                        android:textColorHint="@color/gray"
+                        android:background="@null"
+                        android:maxLines="1"/>
+                </LinearLayout>
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <!-- OTP Verification Layout (Initially Hidden) -->
+            <LinearLayout
+                android:id="@+id/otpLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:visibility="gone"
+                android:layout_marginBottom="16dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Enter OTP sent to your mobile"
+                    android:textColor="@color/teal_700"
+                    android:textSize="14sp"
+                    android:layout_marginBottom="8dp"/>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="6-digit OTP"
+                    app:startIconDrawable="@drawable/ic_lock"
+                    app:startIconTint="@color/teal_700"
+                    app:boxStrokeColor="@color/teal_700"
+                    app:endIconMode="clear_text">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/etOtp"
+                        android:padding="16dp"
+                        android:paddingStart="48dp"
+                        android:inputType="number"
+                        android:maxLength="6"
+                        android:textColor="?attr/colorOnSurface"
+                        android:textColorHint="@color/gray"
+                        android:background="@null"
+                        android:maxLines="1"/>
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical"
+                    android:layout_marginTop="8dp">
+
+                    <Button
+                        android:id="@+id/btnVerifyOtp"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Verify OTP"
+                        android:textColor="@android:color/white"
+                        android:backgroundTint="@color/teal_700"
+                        android:layout_marginEnd="8dp"
+                        android:padding="12dp"/>
+
+                    <TextView
+                        android:id="@+id/tvResendOtp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Resend OTP"
+                        android:textColor="@color/teal_700"
+                        android:textStyle="bold"
+                        android:padding="12dp"
+                        android:clickable="true"/>
+                </LinearLayout>
+            </LinearLayout>
 
             <!-- Password -->
             <com.google.android.material.textfield.TextInputLayout
-                android:layout_marginTop="15dp"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="Password"
                 app:startIconDrawable="@drawable/ic_lock"
-                app:endIconMode="password_toggle">
+                app:startIconTint="@color/teal_700"
+                app:boxStrokeColor="@color/teal_700"
+                app:endIconMode="password_toggle"
+                app:errorEnabled="true"
+                android:layout_marginBottom="16dp">
 
                 <com.google.android.material.textfield.TextInputEditText
-                    android:layout_width="match_parent"                android:layout_height="wrap_content"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
                     android:id="@+id/etPassword"
-                    android:padding="15dp"
-                    android:paddingStart="40dp"
-                    android:inputType="textPassword"/>
+                    android:padding="16dp"
+                    android:paddingStart="48dp"
+                    android:inputType="textPassword"
+                    android:textColor="?attr/colorOnSurface"
+                    android:textColorHint="@color/gray"
+                    android:background="@null"
+                    android:maxLines="1"/>
             </com.google.android.material.textfield.TextInputLayout>
 
             <!-- Confirm Password -->
             <com.google.android.material.textfield.TextInputLayout
-                android:layout_marginTop="15dp"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="Confirm Password"
                 app:startIconDrawable="@drawable/ic_lock"
-                app:endIconMode="password_toggle">
+                app:startIconTint="@color/teal_700"
+                app:boxStrokeColor="@color/teal_700"
+                app:endIconMode="password_toggle"
+                app:errorEnabled="true"
+                android:layout_marginBottom="24dp">
 
                 <com.google.android.material.textfield.TextInputEditText
-                    android:layout_width="match_parent"                android:layout_height="wrap_content"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
                     android:id="@+id/etConfirmPassword"
-                    android:padding="15dp"
-                    android:paddingStart="40dp"
-                    android:inputType="textPassword"/>
+                    android:padding="16dp"
+                    android:paddingStart="48dp"
+                    android:inputType="textPassword"
+                    android:textColor="?attr/colorOnSurface"
+                    android:textColorHint="@color/gray"
+                    android:background="@null"
+                    android:maxLines="1"/>
             </com.google.android.material.textfield.TextInputLayout>
 
-            <!-- Register Btn -->
+            <!-- Terms and Conditions -->
+            <CheckBox
+                android:id="@+id/cbTerms"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="I agree to Terms &amp; Conditions and Privacy Policy"
+                android:textColor="@color/gray"
+                android:buttonTint="@color/teal_700"
+                android:layout_marginBottom="16dp"/>
+
+            <!-- Register Button -->
             <Button
                 android:id="@+id/btnRegister"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Register"
+                android:layout_height="56dp"
+                android:text="Create Account"
                 android:textColor="@android:color/white"
                 android:backgroundTint="@color/teal_700"
-                android:layout_marginTop="25dp"
-                android:padding="12dp"/>
+                android:elevation="4dp"
+                android:padding="12dp"
+                android:textSize="16sp"
+                android:fontFamily="sans-serif-medium"
+                app:cornerRadius="28dp"/>
+
+
+
 
             <!-- Login Text -->
-            <TextView
-                android:id="@+id/tvLogin"
-                android:layout_width="wrap_content"
+            <LinearLayout
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Already have an account? Login"
-                android:textColor="@color/teal_700"
-                android:textStyle="bold"
-                android:layout_gravity="center"
-                android:layout_marginTop="20dp"/>
+                android:orientation="horizontal"
+                android:gravity="center"
+                android:layout_marginTop="32dp"
+                android:layout_marginBottom="40dp">
 
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Already have an account?"
+                    android:textColor="@color/gray"/>
+
+                <TextView
+                    android:id="@+id/tvLogin"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text=" Login"
+                    android:textColor="@color/teal_700"
+                    android:textStyle="bold"
+                    android:paddingStart="4dp"
+                    android:clickable="true"/>
+            </LinearLayout>
+
+            <!-- Security Message -->
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="“Your safety starts with your identity.”"
+                android:text="Your data is encrypted and securely stored"
                 android:textColor="@color/gray"
-                android:textStyle="italic"
+                android:textSize="12sp"
                 android:gravity="center"
-                android:layout_marginTop="40dp"/>
+                android:layout_marginBottom="20dp"/>
         </LinearLayout>
     </ScrollView>
 </LinearLayout>

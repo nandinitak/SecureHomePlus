@@ -3,10 +3,11 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
     android:background="@drawable/bg_survey_gradient"
+    android:fitsSystemWindows="true"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <!-- ✅ Toolbar -->
+    <!-- Toolbar -->
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/toolbarAccount"
         android:layout_width="match_parent"
@@ -84,7 +85,7 @@
                         android:id="@+id/btnHelp"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="❓ Help &amp; Support"
+                        android:text="Help &amp; Support"
                         android:textAllCaps="false"
                         android:backgroundTint="@color/teal_700"
                         android:textColor="@android:color/white"
@@ -97,7 +98,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="12dp"
-                        android:text="🚪 Logout"
+                        android:text="Logout"
                         android:textAllCaps="false"
                         android:textColor="@android:color/white"
                         android:backgroundTint="@color/teal_700"
@@ -112,7 +113,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="© 2025 SecureHome+ | Managed by Kavish 💚"
+                android:text="(c) 2025 SecureHome+ | Managed by Nandini"
                 android:textColor="@android:color/white"
                 android:textSize="12sp"
                 android:fontFamily="@font/poppins_light"

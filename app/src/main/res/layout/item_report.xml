@@ -34,7 +34,7 @@
                 android:id="@+id/tvReportDate"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="📅 03 Nov 2025"
+                android:text="03 Nov 2025"
                 android:textColor="@color/teal_700"
                 android:textSize="14sp"
                 android:fontFamily="@font/poppins_medium"

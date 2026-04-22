@@ -6,6 +6,7 @@
     android:id="@+id/root"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:fitsSystemWindows="true"
     tools:context=".ui.survey.SurveyActivity"
     android:background="@drawable/bg_survey_gradient">
 
@@ -15,7 +16,7 @@
         android:layout_width="match_parent"
         android:layout_height="?attr/actionBarSize"
         android:background="?attr/colorPrimary"
-        android:title="Safety Survey 🛡️"
+        android:title="Safety Survey"
         android:titleTextColor="@android:color/white"
         app:navigationIcon="@drawable/ic_back"
         app:titleCentered="true"
@@ -95,7 +96,7 @@
             android:id="@+id/tvQuote"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="“Your home’s safety is our priority 🔒”"
+            android:text="Your home's safety is our priority"
             android:textColor="@android:color/white"
             android:textSize="14sp"
             android:fontFamily="@font/poppins_light"
@@ -105,7 +106,7 @@
             android:id="@+id/tvCopyright"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="© 2025 SecureHome+ | Crafted by Kavish 💚"
+            android:text="(c) 2025 SecureHome+ | Crafted by Nandini"
             android:textColor="@android:color/white"
             android:textSize="12sp"
             android:fontFamily="@font/poppins_light" />
